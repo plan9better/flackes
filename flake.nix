@@ -1,5 +1,5 @@
 {
-  outputs = rec {
+  outputs = {self, ...}: {
     templates = {
       basic = {
         path = ./basic;
@@ -17,6 +17,6 @@
       };
     };
 
-    defaultTemplate = templates.basic;
+    defaultTemplate = self.templates.basic;
   };
 }
