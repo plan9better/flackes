@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils = "github:numtide/flake-utils";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = {
@@ -16,7 +16,7 @@
         packages = {
           # derivation
         };
-        devShells.default = {
+        devShells.default = pkgs.mkShell {
           packages = with pkgs; [glow];
         };
       }
